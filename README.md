@@ -1,1 +1,1 @@
-# simple_db
+# ezdb
