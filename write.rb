@@ -31,6 +31,15 @@ class Db
 		return ""
 	end
 
+	def self.>(key)
+		new_path = @path + "/" + key
+		Db.new(new_path)
+	end
+
+	def >(key)
+		Db.new(key)
+	end
+
 	def method_missing(*args)
 		method_name = args[0]
 		new_path = @path + "/" + method_name.to_s
