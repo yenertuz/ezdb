@@ -1,7 +1,7 @@
 <?php
 
 $target_rel = $_POST["target"];
-$args = $_POST["args"];
+$args = $_POST["data"];
 $target_root = "/Users/yenertuz/Desktop/ruby_test/scripts";
 $target_path = $target_root . "/" . $target_rel;
 
