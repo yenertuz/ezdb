@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
-load "/Users/yenertuz/Desktop/ezdb/db.rb"
-load "/Users/yenertuz/Desktop/ezdb/scripts/users/user.rb"
+load "/var/www/ezdb/db.rb"
+load "/var/www/ezdb/scripts/users/user.rb"
 
 data = Db.get_data
 if Db["users.#{data["username"]}.password"] == data["password"]

@@ -7,7 +7,7 @@ def reload
 end
 
 module Db
-	ABSOLUTE_PATH = "/Users/yenertuz/Desktop/ezdb/db/"
+	ABSOLUTE_PATH = "/var/www/ezdb/db/"
 
 	def Db.[](key)
 		if key.is_a? Symbol
