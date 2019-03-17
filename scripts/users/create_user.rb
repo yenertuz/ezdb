@@ -1,7 +1,12 @@
 #!/usr/bin/ruby
-load "/Users/yenertuz/Desktop/ruby_test/write.rb"
+load "/Users/yenertuz/Desktop/ezdb/db.rb"
+load "/Users/yenertuz/Desktop/ezdb/scripts/users/user.rb"
 
-arg_path = ARGV[0]
-body = JSON.parse(File.read(arg_path))
-File.delete(arg_path)
-Db.users.send(body["username"]).send("password") << body["password"]
+data = Db.get_data
+if User.exists?(data["username"]) == true
+	print "User already exists"
+	exit
+end
+Db["users"] = Db["users"] + data["username"] + "\n"
+Db["users." + data["username"] + ".password"] = data["password"]
+print "OK"
